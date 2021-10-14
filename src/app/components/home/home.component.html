@@ -1,0 +1,44 @@
+<div class="filters">
+    <mat-form-field>
+        <mat-label style="color: white;" >sort</mat-label>
+        <mat-select
+        panelClass="sort-select"
+        [(ngModel)]="sort"
+        >
+            <mat-option value="name" >Name</mat-option>
+            <mat-option value="-released">Released</mat-option>
+            <mat-option value="-added" >Added</mat-option>
+            <mat-option value="-updated" >Updated</mat-option>
+            <mat-option value="-rating" >Rating</mat-option>
+            <mat-option value="metacritic" >Metacritic</mat-option>
+
+
+
+        </mat-select>
+    </mat-form-field>
+</div>
+
+
+<div class="films">
+    <div class="film">
+
+        
+        <div class="film-img-container">
+            <img src="https://imgsrc.cineserie.com/2021/04/avatar-2-james-cameron-a-menace-de-virer-ses-scenaristes.png?ver=1" class="film-image" alt="">
+        </div>
+
+        <div class="film-description">
+            <p class="film-name">Name</p>
+
+            <div class="film-platforms">
+                <img src="http://lofrev.net/wp-content/photos/2014/09/Xbox-icon.png" alt="">
+            </div>
+            
+        </div>
+
+       
+    </div>
+
+
+    
+</div>
