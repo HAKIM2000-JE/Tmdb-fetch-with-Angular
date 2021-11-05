@@ -2,7 +2,8 @@
     &-container{
         width: 100%;
         height: 60px;
-        background-color: #323a45;
+       // background-color: #323a45;
+       background-color: #000;
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -10,6 +11,8 @@
         top: 0;
         left: 0;
         z-index: 4;
+        display: flex;
+        justify-content: space-between;
     }
 
     &-form{
@@ -31,18 +34,27 @@
     &-button{
         border: none;
         outline: none;
-        background: #3f51b5;
+        // background: #3f51b5;
         padding: 10px;
         border-left:1px solid rgba(0,0,0,0.3);
-        color: #fff;
+        
+        background-color: #fff;
+       
+        color: #000;
         font-weight: 700;
         transition-duration: 0.3s;
         cursor: pointer;
+        
+        position: relative;
+        right: 5px;
 
         &:hover{
-            color: #3f51b5;
-            background-color: #fff;
-            border: 1px solid #3f51b5;
+            
+            background-color: #000;
+            color: #fff;
+            border: none;
+            position: relative;
+            right: 5px;
 
         }
         
@@ -56,4 +68,16 @@
     font-size: 30px;
     cursor: pointer;
     text-decoration: none;
+}
+
+
+.mylogo{
+    margin-left: 10px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 20px;
+
 }

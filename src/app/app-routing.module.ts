@@ -1,3 +1,4 @@
+import { DetailsComponent } from './components/details/details.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -10,6 +11,12 @@ const routes: Routes = [
 
     path: 'search/film-search',
     component: HomeComponent
+
+  },
+  {
+
+    path: 'details/:id',
+    component: DetailsComponent
 
   }
 ];

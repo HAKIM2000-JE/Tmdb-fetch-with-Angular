@@ -1,19 +1,15 @@
 // we have to create and export interface film
 
 export interface Film {
+        id: string;
         background_image: string;
-        name: string;
+        title: string;
         released : string;
-        metacritic_url : string;
-        website : string;
-        description: string;
-        metacritic: string;
-        genres : Array<Genre>;
-        parent_platforms: Array<ParentPlatform>
-        publishers : Array<Publishers>
-        ratings : Array<Rating>
-        screenshots : Array<Screenshots>
-        trailers : Array<Trailer>
+        vote_average:string,
+        poster_path:string,
+        orginal_title:string,
+        overview:string,
+        relase_date:string
 }
 
 export interface APIResponse<T> {
@@ -45,10 +41,6 @@ interface Rating {
     
 }
 
-
-interface screenshots{
-    image: string;
-}
 
 
 

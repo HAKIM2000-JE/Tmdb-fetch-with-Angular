@@ -1,0 +1,94 @@
+
+
+<div class="search-container">
+  <form action="search-form" #form ="ngForm"  >
+      <span class="logo" routerLink="/" >Darkboy</span>
+
+      <input type="text" class="search-input" name="search" ngModel placeholder="Search 500 , 000+ films" >
+      <button class="search-button" >Searh</button>
+  </form>
+
+  <div class="made">
+      <span class="mylogo" routerLink="/" >Login</span>
+
+      
+  </div>
+</div>
+
+
+<section id="banner" style="background-image: url({{film.poster_path}}) ;"  class="clearfix">
+  <div id="banner_content_wrapper">
+    <div id="poster">
+      <img src="{{ film.poster_path }}" alt="Deadpool Movie Poster" class="featured_image">
+      <img src="https://res.cloudinary.com/dw369yzsh/image/upload/v1470916845/play_button_ngnw1z.png" alt="Play Trailer" class="play_button">
+    </div>
+    <div id="content">
+      <h2 class="title">{{film.title}}</h2>
+      <div class="ratings">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star inactive"></i>
+      </div>
+
+      <p class="description">A former Special Forces operative turned mercenary is subjected to a rogue experiment that leaves him with accelerated healing powers, adopting the alter ego Deadpool.</p>
+
+      <p class="info">R <span>|</span> 108 min <span>|</span> Action, Adventure, Comedy <span>|</span> 12 February 2016</p>
+    </div>
+  </div>
+</section>
+            
+
+
+<div class="films">
+
+  <ng-container *ngFor="let film of recommedations | paginate: { itemsPerPage: 5, currentPage: page }">
+
+
+
+    
+
+      <div class="film" (click)="openFilmDetails(film.id)">
+
+      
+          <div class="film-img-container">
+              <img
+                style="width: 100%; object-fit: cover;"
+              src="{{ film.poster_path }}"
+              class="film-image" alt="">
+              
+          </div>
+  
+          <div class="film-description">
+              <p class="film-name">{{ film.title }}</p>
+  
+             
+              
+          </div>
+  
+         
+      </div>
+
+
+
+      
+         
+      <
+
+      
+     
+  </ng-container>
+
+  <pagination-controls  (pageChange)="page = $event"></pagination-controls>
+
+  <div class="footer">
+      <h2>&copy; Made with Angular and Tmdb</h2>
+    </div>
+
+ 
+  
+
+  
+</div>
+
