@@ -1,3 +1,5 @@
+import { AuthComponent } from './auth/auth.component';
+import { FavorisComponent } from './favoris/favoris.component';
 import { DetailsComponent } from './components/details/details.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
@@ -17,6 +19,20 @@ const routes: Routes = [
 
     path: 'details/:id',
     component: DetailsComponent
+
+  },
+
+  {
+
+    path: 'favoris',
+    component: FavorisComponent
+
+  },
+
+  {
+
+    path: 'signUp',
+    component: AuthComponent
 
   }
 ];

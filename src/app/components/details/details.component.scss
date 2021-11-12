@@ -5,10 +5,12 @@ $white: #FFFFFF;
 
 * {
 	box-sizing: border-box;
+ 
 }
 
 html, body {
 	font-family: 'Open Sans', sans-serif;
+  background-color: black;
 }
 
 .clearfix:before, .clearfix:after {

@@ -1,3 +1,4 @@
+
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { stringify } from 'querystring';
@@ -37,12 +38,16 @@ export class HomeComponent implements OnInit , OnDestroy {
   ngOnDestroy(): void {
     throw new Error('Method not implemented.');
   }
-   ngOnInit(): void {
 
+
+
+
+   ngOnInit(): void {
+ 
     this.httpService.getFilmFromServer().then((data:any)=>{  
         
 
-      
+       
        this.films=data.results
 
        this.total = this.films.length
@@ -76,15 +81,22 @@ export class HomeComponent implements OnInit , OnDestroy {
   
 
  
-  openFilmDetails(id: string): any {
-    return this.router.navigate(['/details/' + id]);
+  openFilmDetails(id: string): void {
+    this.router.navigate(['/details/' + id]);
+  }
+
+
+
+  openFvoris(): void {
+    this.router.navigate(['/favoris']);
   }
 
 
 
   OnSubmit() {
     this.httpService.getFilms(this.search_name , 1).then((data)=>( this.films=data.results)).then(()=>{
-
+      
+                
       for(let i=0 ; i<this.films.length ; i ++  ){
         this.httpService.getImage(this.films[i].poster_path).then((err:any)=>(this.films[i].poster_path=err.url))
         
@@ -97,4 +109,8 @@ export class HomeComponent implements OnInit , OnDestroy {
    
   }
 
+
+  addToFavoris(film: Film){
+    this.httpService.addToFavoris(film)
+  }
 }

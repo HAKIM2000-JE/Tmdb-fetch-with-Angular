@@ -1,4 +1,6 @@
-
+<div class="">
+  
+</div>
 
 <div class="search-container">
   <form action="search-form" #form ="ngForm"  >
@@ -23,7 +25,7 @@
       <img src="https://res.cloudinary.com/dw369yzsh/image/upload/v1470916845/play_button_ngnw1z.png" alt="Play Trailer" class="play_button">
     </div>
     <div id="content">
-      <h2 class="title">{{film.title}}</h2>
+      <h1 class="title">{{film.title}}</h1>
       <div class="ratings">
         <i class="fa fa-star"></i>
         <i class="fa fa-star"></i>
@@ -32,9 +34,9 @@
         <i class="fa fa-star inactive"></i>
       </div>
 
-      <p class="description">A former Special Forces operative turned mercenary is subjected to a rogue experiment that leaves him with accelerated healing powers, adopting the alter ego Deadpool.</p>
+      <p class="description">{{film.overview}}}</p>
 
-      <p class="info">R <span>|</span> 108 min <span>|</span> Action, Adventure, Comedy <span>|</span> 12 February 2016</p>
+      <p class="info" style="font-size: 15px;" >Vote average : {{film.vote_average}} <span>|</span>{{film.release_date}}</p>
     </div>
   </div>
 </section>

@@ -22,7 +22,9 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpHeaderInterceptor } from './interceptors/http-params.interceptor';
 import { DetailsComponent } from './components/details/details.component';
 
-import {NgxPaginationModule} from 'ngx-pagination'
+import {NgxPaginationModule} from 'ngx-pagination';
+import { FavorisComponent } from './favoris/favoris.component';
+import { AuthComponent } from './auth/auth.component'
 
 
 
@@ -33,7 +35,9 @@ import {NgxPaginationModule} from 'ngx-pagination'
     SearchBarComponent,
     HomeComponent,
     BannerComponent,
-    DetailsComponent
+    DetailsComponent,
+    FavorisComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

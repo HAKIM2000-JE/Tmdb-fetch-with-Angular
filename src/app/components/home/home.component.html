@@ -10,6 +10,16 @@
         <button class="search-button" >Searh</button>
     </form>
 
+   
+
+
+    <div class="made">
+        <span class="mylogo" (click)="openFvoris()" >Favoris</span>
+
+        
+    </div>
+
+
     <div class="made">
         <span class="mylogo" routerLink="/" >Login</span>
 
@@ -46,6 +56,9 @@
         <mat-select
         panelClass="sort-select"
         [(ngModel)]="sort"
+
+        
+           
         >
             <mat-option value="name" >Name</mat-option>
             <mat-option value="-released">Trending Now
@@ -72,30 +85,42 @@
 
         <div class="film" (click)="openFilmDetails(film.id)">
 
+           
+    
+
         
             <div class="film-img-container">
                 <img
-                  style="width: 100%; object-fit: cover;"
+                  style="width: 100%; object-fit: cover; "
                 src="{{ film.poster_path }}"
                 class="film-image" alt="">
                 
             </div>
     
-            <div class="film-description">
+            <div class="film-description" style="position: relative; top: -50px;" >
                 <p class="film-name">{{ film.title }}</p>
     
                
                 
             </div>
-    
+
+
+
+
            
+
+
+
+            
+            <button style="z-index: 10; position: relative ; top: -50px; margin: 0px 20px 20px 40px;" class="search-button" (click)="addToFavoris(film)" >Add to  Favoris</button>
         </div>
 
 
 
         
+     
            
-        <
+        
   
         
        

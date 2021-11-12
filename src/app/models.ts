@@ -9,8 +9,27 @@ export interface Film {
         poster_path:string,
         orginal_title:string,
         overview:string,
-        relase_date:string
+        release_date:string
 }
+
+
+export interface FavoritFilm {
+    _id: string,
+vote_average: string,
+overview: string,
+title:string,
+id: string,
+__v: number,
+poster_path:string,
+}
+
+
+export interface User {
+      
+      username: string,
+      password : string
+}
+
 
 export interface APIResponse<T> {
       results: Array<T> ;

@@ -1,4 +1,5 @@
-import { Film } from 'src/app/models';
+import { User } from './../models';
+import { FavoritFilm, Film } from 'src/app/models';
 
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -19,6 +20,17 @@ export class HttpService {
  
 
   constructor(private http: HttpClient) { }
+
+
+
+
+  getFavorits(){
+
+    return this.http.get<Array<FavoritFilm>>(`http://localhost:5000/films`).toPromise()
+    .then((res: any)=>res).catch(err=>console.log(err))
+    
+
+   }
 
 
   
@@ -55,5 +67,29 @@ export class HttpService {
          .then((response:any)=>response)
          .catch((err)=>console.log(err));
   }
+
+
+  addToFavoris(film : Film){
+    const headers = { 'content-type': 'application/json'}  
+    const body=JSON.stringify(film);
+    console.log(body)
+    return this.http.post('http://localhost:5000/films/client/save', body,{'headers':headers}).toPromise()
+    .then((response:any)=>response)
+    .catch((err)=>console.log(err));
+  }
+
+
+
+  addUser(user:User){
+    const headers = { 'content-type': 'application/json'}  
+    const body=JSON.stringify(user);
+    console.log(body)
+    return this.http.post('http://localhost:5000/articles', body,{'headers':headers}).toPromise()
+    .then((response:any)=>response)
+    .catch((err)=>console.log(err));
+  }
+
+
+ 
 
 }
